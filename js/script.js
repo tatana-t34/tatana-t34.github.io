@@ -91,3 +91,20 @@ $('.select').each(function() {
       }
   });
 });
+
+const burgerIcon = document.getElementById('burger-icon');
+const menu = document.getElementById('menu');
+const body = document.body;
+
+burgerIcon.addEventListener('click', () => {
+  menu.classList.toggle('show');
+});
+
+// Закрытие меню при клике вне меню
+body.addEventListener('click', (event) => {
+  if (!event.target.closest('.menu-container') && !event.target.closest('#menu')) {
+    menu.classList.remove('show');
+  }
+});
+
+
